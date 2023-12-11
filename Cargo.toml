@@ -1,0 +1,19 @@
+[workspace]
+
+members = [
+    'libs/mx-logger',
+    'libs/mx-codec',
+]
+
+resolver = "2"
+
+[workspace.dependencies]
+chrono = "0.4.31"
+nanoid = "0.4.0"
+rand = "0.8.5"
+serde = "1.0.190"
+serde_json = "1.0.107"
+thiserror = "1.0.50"
+
+mx-logger = { workspace = true, path = "libs/mx-logger" }
+mx-codec = { workspace = true, path = "libs/mx-codec" }
