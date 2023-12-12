@@ -23,6 +23,7 @@ nom = "7.1"
 ordered-float = "4.1"
 rand_chacha = "0.3"
 rand_distr = "0.4"
+rand = "0.8.5"
 
 [dev-dependencies]
 assert-json-diff = "2.0"
@@ -36,23 +37,7 @@ yrs = "0.16.5"
 
 [[bench]]
 harness = false
-name = "array_ops_benchmarks"
-
-[[bench]]
-harness = false
-name = "codec_benchmarks"
-
-[[bench]]
-harness = false
 name = "map_ops_benchmarks"
-
-[[bench]]
-harness = false
-name = "text_ops_benchmarks"
-
-[[bench]]
-harness = false
-name = "update_benchmarks"
 
 [lib]
 bench = true
