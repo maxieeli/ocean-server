@@ -1,0 +1,41 @@
+{
+	"compilerOptions": {
+		"jsx": "react",
+		"target": "ES2020",
+		"useDefineForClassFields": false,
+		"experimentalDecorators": true,
+		"module": "ESNext",
+		"lib": ["ESNext", "DOM"],
+		"moduleResolution": "NodeNext",
+		"strict": true,
+		"sourceMap": true,
+		"declaration": true,
+		"declarationMap": true,
+		"resolveJsonModule": true,
+		"verbatimModuleSyntax": true,
+		"esModuleInterop": true,
+		"noEmitOnError": true,
+		"noUnusedLocals": true,
+		"noImplicitReturns": true,
+		"skipLibCheck": true,
+		"incremental": true,
+		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true,
+		"noImplicitOverride": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noFallthroughCasesInSwitch": true,
+		"paths": {
+			"@maxiee/jwt": ["./apps/jwt/lib"],
+			"@maxiee/jwt-react": ["./apps/jwt-react/lib"]
+		}
+	},
+	"files": [],
+	"references": [
+		{
+			"path": "./app/jwt"
+		},
+		{
+			"path": "./app/jwt-react"
+		}
+	]
+}
