@@ -118,7 +118,7 @@ pub(crate) trait ListType: AsInner<Inner = YTypeRef> {
 
     fn insert_at(&mut self, index: u64, content: Content) -> MxCodecResult {
         if index > self.content_len() {
-            return Err(JwstCodecError::IndexOutOfBound(index));
+            return Err(MxCodecError::IndexOutOfBound(index));
         }
         if let Some((mut store, mut ty)) = self.as_inner().write() {
             if let Some(mut pos) = self.find_pos(&ty, index) {
@@ -126,7 +126,7 @@ pub(crate) trait ListType: AsInner<Inner = YTypeRef> {
                 Self::insert_after(&mut ty, &mut store, pos, content)?;
             }
         } else {
-            return Err(JwstCodecError::DocReleased);
+            return Err(MxCodecError::DocReleased);
         }
         Ok(())
     }
@@ -158,19 +158,19 @@ pub(crate) trait ListType: AsInner<Inner = YTypeRef> {
         }
         None
     }
-    fn remove_at(&mut self, idx: u64, len: u64) -> JwstCodecResult {
+    fn remove_at(&mut self, idx: u64, len: u64) -> MxCodecResult {
         if len == 0 {
             return Ok(());
         }
         if idx >= self.content_len() {
-            return Err(JwstCodecError::IndexOutOfBound(idx));
+            return Err(MxCodecError::IndexOutOfBound(idx));
         }
         if let Some((mut store, mut ty)) = self.as_inner().write() {
             if let Some(pos) = self.find_pos(&ty, idx) {
                 Self::remove_after(&mut ty, &mut store, pos, len)?;
             }
         } else {
-            return Err(JwstCodecError::DocReleased);
+            return Err(MxCodecError::DocReleased);
         }
         Ok(())
     }
